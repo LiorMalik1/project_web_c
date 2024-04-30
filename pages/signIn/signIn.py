@@ -34,10 +34,6 @@ def signInCustomer():
                             request.form.get('phone')
                             )
             
-            # too slow to fetch the new user immediately 
-            # session["user"] = check_user_credentials(username, request.form.get('password'))
-            # print("created customer:")
-            # print(session["user"])
 
             return redirect(url_for('homePage.index'))
             

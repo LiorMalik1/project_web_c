@@ -35,25 +35,3 @@ def logIn_user():
             return redirect(url_for('homePage.index'))
 
     return render_template("logIn.html", msg1="")
-
-
-
-
-# ##############
-
-# @logIn.route('/logIn', methods=['GET', 'POST'])
-# def index():
-#     if request.method == 'POST':
-#             username = request.form.get('e-mail')
-#             password = request.form.get('password')
-#             user_details = check_user_credentials(username, password)
-
-#             print("user_details")
-#             print(user_details)
-
-#             if user_details:
-#                 session['user'] = user_details
-#                 return redirect(url_for('homePage.index'))
-#             return render_template('logIn.html')
-#     else:
-#         return render_template('logIn.html')

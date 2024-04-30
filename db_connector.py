@@ -13,11 +13,6 @@ DB = client['fixItDB']
 customers_col = DB['customers']
 business_col = DB['business']
 
-# add here bkababkabk
-# add hrewrererfefnjk
-
-
-
 def get_business_by_username(username):
     return business_col.find_one({'username': username})
 
@@ -38,8 +33,7 @@ def create_business(businessName, username, email, password, city ,gender, phone
         'proffesion': proffesion,
         'seniority': seniority,
         'numOfClicks': 0
-        #'leftClasses':0,
-        #'classes': []
+
     }
     business_col.insert_one(new_business)
 
@@ -56,20 +50,6 @@ def get_customer_by_username(username):
 def get_customers():
     return list(customers_col.find())
 
-# def create_customer(firstName,lastName, username, email, password, city,gender, phone):
-#     new_customer = {
-#         'firstName': firstName,
-#         'lastName' : lastName,
-#         'username': username,
-#         'email': email,
-#         'password': password,
-#         'city' : city,
-#         'gender' : gender,
-#         'phone': phone
-#     }
-#     customers_col.insert_one(new_customer)
-
-
 def save_user_to_db(user):
     validate_user = dict()
     validate_user['firstName'] = user.get('firstName', 'no_first_name')
@@ -82,14 +62,7 @@ def save_user_to_db(user):
     res = customers_col.insert_one(validate_user)
     print(res.inserted_id)
 
-
-
-
-
-    
-
 ##################################################
-
 import json
 
 DB = 'fixItDB'
@@ -170,5 +143,4 @@ def create_customer(firstName,lastName, username, email, password, city,gender, 
     def update_click_count(business):
         username = business['username']
         numOfClicks = int(business['numOfClicks']) + 1
-       # leftClasses = str(leftClasses)
         business_col.update_one({'username': username}, {'$set': {'numOfClicks': numOfClicks}})

@@ -44,29 +44,7 @@ const onSubmit = (e) => {
       msg.innerHTML ="please enter a valid phone number";
      }
     else {
-        // //------to overcome the duplicate onsubmit issue---------
-        // var formData = new FormData(e.target)
-        // // prepare AJAX request
-        // var request = new XMLHttpRequest()
-        // // get the method and action from the form
-        // var method = e.target.method || 'POST'
-        // var action = e.target.action || '#'
 
-        // // perform the AJAX request
-        // request.open(method, action)
-        // request.send(formData)
-        // //-----------------------------------------------------
-        // console.log('fields filled up')
-        // alert("Well done! you are in:)")
-        // const li = document.createElement('li')
-        // li.innerHTML = `${firstNameInput.value}: ${lastNameInput.value} ${emailInput.value}: ${passwordInput.value} ${addressInput.value}: ${genderInput.value} ${phoneInput.value}`
-        // firstNameInput.value = ''
-        // lastNameInput.value = ''
-        // emailInput.value = ''
-        // passwordInput.value = ''
-        // addressInput.value = ''
-        // genderInput.value = ''
-        // phoneInput.value = ''
         myForm.submit();
     }
 }
